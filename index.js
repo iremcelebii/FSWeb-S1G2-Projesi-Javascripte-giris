@@ -20,6 +20,16 @@ Aşağıdakileri yapın:
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
 
+console.clear();
+
+const surucuYasi=34;
+if (surucuYasi >18){
+console.log("true"); 
+//tırnak içinde yazmasan da olurdu.
+}
+else{
+console.log("false");
+}
 
 
 /*
@@ -34,8 +44,17 @@ Aşağıdakileri yapınız:
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
 
-
-
+//öylesine fonksiyon oluşturdum.
+let birincideger = 12;
+let ikincideger = 34;
+function Degisim (){
+if (birincideger<ikincideger){
+birincideger=17;
+}
+}
+//fonksiyonu tekrar yazmazsan fonksiyonu kullanmaz.
+Degisim();
+console.log(birincideger);
 
 
 /*
@@ -49,7 +68,11 @@ Aşağıdakileri yapın:
    İPUCU: Number metoduna bakabilirsin
 */
 
+let degisken = "1999";
+console.log(Number(degisken));
 
+//veya Number(degisken);
+//console.log(degisken);
 
 
 /*
@@ -61,9 +84,14 @@ Aşağıdakileri yapın:
    3. a ve b'yi çarpıp, sonucu dönün
 */
 
-function carpma(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+
+let a = 10;
+let b =20;
+
+function carpma(c, d){
+ return c*d;
 }
+console.log(carpma(a, b));
 
 
 
@@ -77,9 +105,13 @@ Aşağıdakileri yapın:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
-}
+ const yasim=13;
+
+ function kopeginYasi(insanyasi){
+  return 7*insanyasi;
+ }
+ console.log(kopeginYasi(yasim));  
+ 
 
 
 
@@ -104,9 +136,48 @@ Aşağıdakileri oyun isimli fonksiyonu kullanarak yapın.
 OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı yener | veya beraberlik olur.
 */
 
+let num = Math.floor(Math.random()*3);
+console.log(num);
+const durum = ["Taş", "Kağıt ", "Makas"];
+let bilgisayar = durum[num];
+console.log(bilgisayar);
+const oyuncu = "Makas";
+
+
 function oyun(oyuncu, bilgisayar){
-  /*buraya kodunu yazabilirsin*/
-}
+ 
+  if (oyuncu === "Makas"){
+
+      if (bilgisayar === "Taş"){
+          return "Kaybettin!";
+      }
+      else if (bilgisayar === "Makas") {
+          return "Beraberlik";
+      } 
+      else {
+          return "Kazandın!";
+       }}
+ else if (oyuncu=== "Taş"){
+
+      if (bilgisayar === "Kağıt"){
+        return "Kaybettin!";
+      }
+      else if (bilgisayar === "Taş") {
+        return "Beraberlik";
+      } 
+      else {
+        return "Kazandın!";
+       }}
+  else{
+        if (bilgisayar === "Makas"){
+          return "Kaybettin!";
+        }
+        else if (bilgisayar === "Kağıt") {
+          return "Beraberlik";
+        } else {
+          return "Kazandın!";
+           } } }
+console.log(oyun (oyuncu, bilgisayar));
 
 
 
@@ -120,9 +191,10 @@ Aşağdakileri milDonusturucu fonksiyonunu kullanarak yapın:
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function milDonusturucu(kmdegeri){
+ return 0.621371 * kmdegeri;
 }
+console.log(milDonusturucu(1000000000));
 
 
 
@@ -134,10 +206,10 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yapın:
 3. feet değerini geri dönün
 */
 
-function feetDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function feetDonusturucu(cmdegeri){
+ return  cmdegeri / 30.48;
 }
-
+console.log (feetDonusturucu (100));
 
 
 /* Görev 5 : 5 küçük maymun yatakta zıplamış şarkısını çocuklar için hazırladığımızı varsayalım. https://www.youtube.com/watch?v=e4EJ34xnlxk */
@@ -153,9 +225,16 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yapın:
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
 
-function cocukSarkisi(/*buraya kodunu yazabilirsin*/){
-      /*buraya kodunu yazabilirsin*/
+
+function cocukSarkisi(maymunsayisi){
+return maymunsayisi + " küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!";
 }
+
+for (let i =3 ; i>0 ; i--){
+  console.log (cocukSarkisi(i));
+}
+
+
 
 
 /* Görev 6 : Not Hesaplayıcı */
@@ -173,8 +252,28 @@ Aşağdakileri notHesapla fonksiyonunda yapın.
  dönün
 */
 
-function notHesapla(/*buraya kodunu yazabilirsin*/){
-/*buraya kodunu yazabilirsin*/
+
+let sinavsonucu = Math.floor(Math.random()*100);
+console.log (sinavsonucu);
+console.log (notHesapla(sinavsonucu));
+
+function notHesapla(puan){
+if  (puan>=90) {
+  return "A aldın";
+}
+else if  (puan>=80){
+  return "B aldın";
+}
+else if  (puan>=70){
+  return "C aldın";
+}
+else if  (puan>=60){
+  return "D aldın";
+}
+else{
+  return "F aldın";
+}
+
 }
 
 
